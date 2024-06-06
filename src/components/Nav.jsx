@@ -11,6 +11,7 @@ export default function Nav() {
   function handleOverlayClick() {
     setIsHamburgerOpen(!isHamburgerOpen);
   }
+  //this prevents body scrolling when the dynamic nav is open
   useEffect(() => {
     if (isHamburgerOpen) {
       document.body.classList.add("no-scroll");
@@ -22,18 +23,27 @@ export default function Nav() {
       document.body.classList.remove("no-scroll");
     };
   }, [isHamburgerOpen]);
-  // useEffect(()=>{
-  //   if(document.body.width )
-  // })
+  //this will close the dynamic nav when it is open and the window resize to over lg divices
+  useEffect(() => {
+    function handleResize() {
+      if (window.innerWidth > 1024) {
+        setIsHamburgerOpen(false);
+      }
+    }
+    window.addEventListener("resize", handleResize);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, [isHamburgerOpen]);
 
   return (
-    <header className="padding-x py-8 absolute z-10  w-full">
+    <header className=" padding-x py-8 absolute z-10  w-full">
       <nav className="flex justify-between items-center max-container">
         <a href="/">
           <img src={headerLogo} alt="Logo" width={130} height={29} />
         </a>
         <ul
-          className="flex-1 flex justify-center items-center gap-16  bg-pink-300
+          className="flex-1 flex justify-center items-center gap-16
         max-lg:hidden"
         >
           {navLinks.map((item) => (
@@ -53,7 +63,10 @@ export default function Nav() {
           isHamburgerOpen={isHamburgerOpen}
         />
 
-        <div onClick={handleClick} className="hidden max-lg:block">
+        <div
+          onClick={handleClick}
+          className="hidden max-lg:block cursor-pointer"
+        >
           <img src={hamburger} alt="Button" width={25} height={25} />
         </div>
       </nav>
@@ -64,16 +77,16 @@ export default function Nav() {
 function Hamburger({ handleClose, isHamburgerOpen }) {
   return (
     <div
-      className={`transition-all duration-[2s] ease ${
-        !isHamburgerOpen && "translate-x-[10px]"
+      className={`fixed inset-0  transition-all duration-[0.35s] ease  ${
+        !isHamburgerOpen && "translate-x-full"
       }`}
     >
       <div
-        className={` fixed top-0 right-0 w-3/4 h-full bg-pink-500 z-30 lg:hidden`}
+        className={`absolute top-0 right-0 w-3/4 h-full bg-coral-red z-30 lg:hidden`}
       >
         <ul className="p-4">
           {navLinks.map((item) => (
-            <li key={item.label} className="py-2">
+            <li key={item.label} className="py-7 px-10 text-xl">
               <a href={item.href} className="text-white" onClick={handleClose}>
                 {item.label}
               </a>
@@ -83,7 +96,7 @@ function Hamburger({ handleClose, isHamburgerOpen }) {
       </div>
       <div
         onClick={handleClose}
-        className="fixed inset-0 w-full h-full bg-black opacity-40  z-20 lg:hidden"
+        className=" w-full h-full bg-black opacity-40  z-20 lg:hidden"
       ></div>
     </div>
   );
