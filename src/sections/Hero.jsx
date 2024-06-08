@@ -10,31 +10,33 @@ export default function Hero() {
     <section
       id="home"
       className="w-full  min-h-screen
-    flex flex-col xl:flex-row justify-center items-center "
+    flex flex-col xl:flex-row justify-center items-center
+     max-container"
     >
       <div
-        className="relative max-xl:padding-x pt-28  xl:w-2/5 w-full flex flex-col justify-center items-start
+        className="hero-left relative max-xl:padding-x   xl:w-2/5 
+        w-full flex flex-col justify-center items-start 
       "
       >
-        <p className="font-montsserat text-coral-red text-xl">
+        <p className="font-montsserat pt-20   text-coral-red text-xl">
           Our Summer Collection
         </p>
         <h1
-          className="font-palanquin text-8xl max-sm:text-[72px]
-           leading-[110px] font-bold mt-10"
+          className="font-palanquin text-8xl max-sm:text-[70px]
+           leading-[110px] font-bold mt-7"
         >
           <span
             className="xl:bg-white xl:whitespace-nowrap
-          relative z-10 pr-10"
+          relative z-10 pr-2"
           >
             The New Arrival
           </span>
           <br />
-          <span className="text-coral-red inline-block mt-3">Nike</span> Shoes
+          <span className="text-coral-red inline-block mt-2">Nike</span> Shoes
         </h1>
         <p
           className="text-slate-600 font-montserrat text-lg
-                       mt-10 mb-14 max-w-[420px] leading-8"
+                       mt-4 mb-14 max-w-[420px] leading-8"
         >
           Discover staylish Nike arrivals,quality comfort,and innovation for
           your active life
@@ -42,7 +44,7 @@ export default function Hero() {
         <Button iconUrl={arrowRight}>Shop now</Button>
         <div
           className="flex  justify-start items-start w-full 
-                     gap-16 flex-wrap  mt-20 "
+                     gap-16 flex-wrap  mt-16 "
         >
           {statistics.map((stat) => (
             <div key={stat.label}>
@@ -56,22 +58,24 @@ export default function Hero() {
       </div>
       {/* ///right section/////////////////////////////////// */}
       <div
-        className="relative flex-1  flex justify-center items-center
-      xl:min-h-screen max-xl:py-40 bg-primary bg-hero bg-cover
-       bg-center"
+        className="hero-right relative flex-1  
+        flex justify-center items-center
+      xl:min-h-[100vh] max-xl:py-40 max-xl:w-full bg-primary 
+      bg-hero bg-cover ml-4
+       bg-center max-sm:mt-6"
       >
         <img
           src={bigShoeImage}
           alt="big shoe"
           className="object-contain relative z-10"
-          width={610}
-          height={500}
+          width={580}
+          height={480}
         />
         <div
-          className="flex absolute -bottom-[5%] sm:left-[10%] justify-center
-                     items-center sm:gap-4 gap-6 max-sm:px-6"
+          className="flex absolute -bottom-[5%] sm:left-[10%] 
+          justify-center items-center sm:gap-4 gap-6 max-sm:px-6"
         >
-          {shoes.map((shoe, index) => (
+          {shoes.map((shoe) => (
             <ShowCard
               key={shoe.bigShoe}
               imgUrl={shoe}

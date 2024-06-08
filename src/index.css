@@ -37,6 +37,14 @@
   bottom: 0;
   right: 0;
 }
+
+@media (min-width: 1280px) and (max-height: 820px) {
+  .hero-left {
+  }
+  .hero-right {
+    height: 120vh;
+  }
+}
 @layer components {
   .max-container {
     max-width: 1440px;

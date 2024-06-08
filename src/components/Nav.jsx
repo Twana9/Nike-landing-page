@@ -37,7 +37,7 @@ export default function Nav() {
   }, [isHamburgerOpen]);
 
   return (
-    <header className=" padding-x py-8 absolute z-10  w-full">
+    <header className=" padding-x py-8 absolute z-50  w-full">
       <nav className="flex justify-between items-center max-container">
         <a href="/">
           <img src={headerLogo} alt="Logo" width={130} height={29} />
@@ -49,8 +49,8 @@ export default function Nav() {
           {navLinks.map((item) => (
             <li key={item.label}>
               <a
+                href={item.href}
                 className="font-montserrat leading-normal text-lg text-slate-gray"
-                href="item.href"
               >
                 {item.label}
               </a>

@@ -8,7 +8,7 @@ export default function ShowCard({ imgUrl, bigShoeImage, changeBigShoeImage }) {
     <div
       className={`border-2 rounded-xl
               ${
-                bigShoeImage === imgUrl
+                bigShoeImage === imgUrl.bigShoe
                   ? "border-coral-red"
                   : "border-transparent"
               } cursor-pointer max-sm:flex-1`}
