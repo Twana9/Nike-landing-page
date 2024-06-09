@@ -2,13 +2,13 @@ import { products } from "../constants";
 import PopularProductCard from "../components/PopularProductCard";
 export default function PopularProducts() {
   return (
-    <section id="products" className="min-h-screen max-smLmt-12 max-container ">
+    <section id="products" className=" max-smLmt-12 max-container ">
       <div className="flex flex-col justify-start  gap-5">
         <h1 className="font-monsserat text-4xl font-bold">
           Our <span className="text-coral-red">Popular</span> Products
         </h1>
         <p
-          className="text-2xl lg:ma-w-lg  mt-2 font-montserrat
+          className="text-2xl lg:max-w-lg max-w-[500px]  min-w-[250px] mt-2 font-montserrat
         text-slate-gray"
         >
           Experience top-notch quality and style with our sought-after selctions

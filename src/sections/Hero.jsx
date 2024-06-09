@@ -14,16 +14,19 @@ export default function Hero() {
      max-container"
     >
       <div
-        className="hero-left relative max-xl:padding-x   xl:w-2/5 
+        className="hero-left relative  md:padding-x xl:w-2/5 
         w-full flex flex-col justify-center items-start 
-      "
+      max-md:px-10 "
       >
-        <p className="font-montsserat pt-20   text-coral-red text-xl">
+        <p
+          className="font-montsserat pt-20   text-coral-red text-xl
+        max-sm:pt-28"
+        >
           Our Summer Collection
         </p>
         <h1
-          className="font-palanquin text-8xl max-sm:text-[70px]
-           leading-[110px] font-bold mt-7"
+          className="font-palanquin text-8xl max-sm:text-[65px]
+           leading-[110px] max-sm:leading-[75px] font-bold mt-7"
         >
           <span
             className="xl:bg-white xl:whitespace-nowrap
@@ -36,9 +39,9 @@ export default function Hero() {
         </h1>
         <p
           className="text-slate-600 font-montserrat text-lg
-                       mt-4 mb-14 max-w-[420px] leading-8"
+                       mt-4 mb-14 max-w-[420px] leading-8 max-sm:mt-8"
         >
-          Discover staylish Nike arrivals,quality comfort,and innovation for
+          Discover staylish Nike arrivals, quality comfort,and innovation for
           your active life
         </p>
         <Button iconUrl={arrowRight}>Shop now</Button>
@@ -62,7 +65,7 @@ export default function Hero() {
         flex justify-center items-center
       xl:min-h-[100vh] max-xl:py-40 max-xl:w-full bg-primary 
       bg-hero bg-cover ml-4
-       bg-center max-sm:mt-6"
+       bg-center max-sm:mt-6 max-sm:px-0 max-sm:mx-0"
       >
         <img
           src={bigShoeImage}
