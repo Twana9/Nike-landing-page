@@ -57,7 +57,9 @@ export default function Nav() {
             </li>
           ))}
         </ul>
-
+        <p className="font-montserrat text-lg  font-medium">
+          Sign in / Explore now
+        </p>
         <Hamburger
           handleClose={handleOverlayClick}
           isHamburgerOpen={isHamburgerOpen}

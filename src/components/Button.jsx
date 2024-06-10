@@ -1,16 +1,30 @@
-export default function Button({ iconUrl, children }) {
+export default function Button({
+  iconUrl,
+  children,
+  background,
+  textColor,
+  borderColor,
+}) {
   return (
     <button
-      className="flex justify-center items-center font-montserrat
-     text-lg border bg-coral-red text-white py-4 px-7 rounded-full
-     leading-none border-coral-red gap-2"
+      className={`flex justify-center items-center font-montserrat
+     text-lg border   py-4 px-7 rounded-full
+     leading-none  gap-2 transform 
+     hover:translate-y-1 active:translate-y-2
+     ${
+       background
+         ? `${background} ${textColor} ${borderColor}`
+         : "border-coral-red bg-coral-red text-white"
+     } `}
     >
       {children}
-      <img
-        src={iconUrl}
-        alt="Arrow icon"
-        className="h-5 w-5  ml-2 rounded-full"
-      />
+      {iconUrl && (
+        <img
+          src={iconUrl}
+          alt="Arrow icon"
+          className="h-5 w-5  ml-2 rounded-full"
+        />
+      )}
     </button>
   );
 }

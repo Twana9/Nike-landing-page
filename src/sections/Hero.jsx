@@ -14,12 +14,12 @@ export default function Hero() {
      max-container"
     >
       <div
-        className="hero-left relative  md:padding-x xl:w-2/5 
+        className="hero-left relative  md:padding-x xl:px-0 xl:w-2/5 
         w-full flex flex-col justify-center items-start 
       max-md:px-10 "
       >
         <p
-          className="font-montsserat pt-20   text-coral-red text-xl
+          className="font-montserrat pt-18   text-coral-red text-xl
         max-sm:pt-28"
         >
           Our Summer Collection
@@ -44,7 +44,9 @@ export default function Hero() {
           Discover staylish Nike arrivals, quality comfort,and innovation for
           your active life
         </p>
-        <Button iconUrl={arrowRight}>Shop now</Button>
+        <a href="../one.html">
+          <Button iconUrl={arrowRight}>Shop now</Button>
+        </a>
         <div
           className="flex  justify-start items-start w-full 
                      gap-16 flex-wrap  mt-16 "

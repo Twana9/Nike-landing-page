@@ -38,11 +38,12 @@
   right: 0;
 }
 
-@media (min-width: 1280px) and (max-height: 820px) {
+@media (min-width: 1280px) and (max-height: 900px) {
   .hero-left {
   }
   .hero-right {
-    height: 120vh;
+    height: 135vh;
+    margin-left: 50px;
   }
 }
 @layer components {

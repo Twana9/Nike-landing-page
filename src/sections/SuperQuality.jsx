@@ -1,4 +1,5 @@
 import { shoe8 } from "../assets/images";
+import Button from "../components/Button";
 export default function SuperQuality() {
   return (
     <section
@@ -12,15 +13,15 @@ export default function SuperQuality() {
         className="flex flex-1 flex-col justify-cetner
       items-start w-full"
       >
-        <h1
-          className="font-palanquin text-4xl max-sm:text-[46px]
+        <h2
+          className="font-palanquin  capitalize text-4xl max-sm:text-[46px]
             font-bold mt-7 leading-[56px]"
         >
           We provide You
           <span className=" text-coral-red"> Super</span>
           <span className="text-coral-red"> Quality </span>
           Shoes
-        </h1>
+        </h2>
         <p className="info-text  mt-5 lg:max-w-lg">
           Ensuring premium comfort and style, our meticulously crafted footwear
           is designed to elevate your experience, providing you with unmatched
@@ -29,14 +30,9 @@ export default function SuperQuality() {
         <p className="info-text mt-6 lg:max-w-lg">
           Our dedication to detail and excellence ensures your satisfaction
         </p>
-        <button
-          className="flex justify-center items-center font-montserrat
-                     text-lg border bg-coral-red mt-10
-                     text-white py-4 px-7 rounded-full
-                     leading-none border-coral-red max-w-[210px]"
-        >
-          View details
-        </button>
+        <div className="mt-11">
+          <Button>View details</Button>
+        </div>
       </div>
       {/* ///Right section////////////////////////////////////// */}
       <div className="flex flex-1 justify-center items-center">
