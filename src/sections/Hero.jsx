@@ -19,7 +19,7 @@ export default function Hero() {
       max-md:px-10 "
       >
         <p
-          className="font-montserrat pt-18   text-coral-red text-xl
+          className="font-montserrat pt-20   text-coral-red text-xl
         max-sm:pt-28"
         >
           Our Summer Collection

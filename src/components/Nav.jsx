@@ -57,7 +57,7 @@ export default function Nav() {
             </li>
           ))}
         </ul>
-        <p className="font-montserrat text-lg  font-medium">
+        <p className="font-montserrat text-lg  font-medium max-lg:hidden cursor-pointer">
           Sign in / Explore now
         </p>
         <Hamburger
@@ -95,6 +95,12 @@ function Hamburger({ handleClose, isHamburgerOpen }) {
             </li>
           ))}
         </ul>
+        <p
+          onClick={handleClose}
+          className=" font-montserrat text-lg  font-medium  mt-5 ml-7 text-white p-6 cursor-pointer"
+        >
+          SignIn / Explore now
+        </p>
       </div>
       <div
         onClick={handleClose}
