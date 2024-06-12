@@ -4,6 +4,7 @@ export default function Button({
   background,
   textColor,
   borderColor,
+  fullWidth,
 }) {
   return (
     <button
@@ -15,7 +16,7 @@ export default function Button({
        background
          ? `${background} ${textColor} ${borderColor}`
          : "border-coral-red bg-coral-red text-white"
-     } `}
+     }  ${fullWidth && "w-full"}`}
     >
       {children}
       {iconUrl && (
