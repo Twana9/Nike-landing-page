@@ -1,5 +1,5 @@
 import { footerLogo } from "../assets/images";
-import { socialMedia } from "../constants";
+import { footerLinks, socialMedia } from "../constants";
 
 export default function Footer() {
   return (
@@ -35,6 +35,21 @@ export default function Footer() {
               </div>
             ))}
           </div>
+        </div>
+        <div
+          className="flex flex-1 justify-between
+        items-center gap-20 max-lg:gap-10 flex-wrap"
+        >
+          {footerLinks.map((section) => (
+            <div className="text-white ">
+              <h4 className="text-lg mb-3">{section.title}</h4>
+              <ul>
+                {section.links.map((link) => (
+                  <li>{link.name}</li>
+                ))}
+              </ul>
+            </div>
+          ))}
         </div>
       </div>
     </footer>
