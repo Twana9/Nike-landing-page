@@ -5,7 +5,7 @@ export default function Subscribe() {
       id="contact-us"
       className="max-container flex justify-between
                   items-center max-lg:flex-col 
-                   gap-10"
+                   gap-10 "
     >
       <h1
         className="font-palanquin text-4xl lg:max-w-md font-bold 

@@ -1,3 +1,4 @@
+import { copyrightSign } from "../assets/icons";
 import { footerLogo } from "../assets/images";
 import { footerLinks, socialMedia } from "../constants";
 
@@ -8,7 +9,7 @@ export default function Footer() {
         className="flex justify-between items-start 
         gap-20 flex-wrap max-lg:flex-col"
       >
-        <div className="flex flex-col">
+        <div className="flex flex-col ">
           <a href="#">
             <img
               src={footerLogo}
@@ -28,6 +29,7 @@ export default function Footer() {
           <div className="flex gap-5 mt-8 items-center">
             {socialMedia.map((icon) => (
               <div
+                key={icon.alt}
                 className="bg-white flex justify-center 
               items-center rounded-full w-12 h-12 cursor-pointer"
               >
@@ -38,19 +40,51 @@ export default function Footer() {
         </div>
         <div
           className="flex flex-1 justify-between
-        items-center gap-20 max-lg:gap-10 flex-wrap"
+         gap-20 lg:gap-10 flex-wrap "
         >
           {footerLinks.map((section) => (
-            <div className="text-white ">
-              <h4 className="text-lg mb-3">{section.title}</h4>
+            <div key={section.title}>
+              <h4
+                className="font-montserrat font-medium mb-6
+                  leading-normal text-2xl text-white"
+              >
+                {section.title}
+              </h4>
               <ul>
                 {section.links.map((link) => (
-                  <li>{link.name}</li>
+                  <li
+                    key={link.name}
+                    className="mt-3 text-white-400 font-montserrat
+                       leading-normal text-base hover:text-slate-gray 
+                       cursor-pointer"
+                  >
+                    <a> {link.name}</a>
+                  </li>
                 ))}
               </ul>
             </div>
           ))}
         </div>
+      </div>
+
+      <div
+        className="flex justify-between text-white-400
+           max-sm:flex-col max-sm:items-center mt-24"
+      >
+        <div
+          className="flex flex-1 justify-start items-center
+             font-montserrat gap-2 cursor-pointer"
+        >
+          <img
+            src={copyrightSign}
+            alt="copyright sign"
+            width={20}
+            height={20}
+            className="rounded-full m-0"
+          />
+          <p>Copyright. All rights reserved.</p>
+        </div>
+        <p className="font-montserrat cursor-pointer">Terms & Conditions</p>
       </div>
     </footer>
   );
